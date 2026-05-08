@@ -150,12 +150,12 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000/about:
-- [ ] Nav shows About as active link
-- [ ] Large statement is first thing visible
-- [ ] Two-column story appears below statement
-- [ ] Three principle cards render in a row
-- [ ] Currently learning list renders with dividers
-- [ ] Fonts are correct throughout
+- [x] Nav shows About as active link
+- [x] Large statement is first thing visible
+- [x] Two-column story appears below statement
+- [x] Three principle cards render in a row
+- [x] Currently learning list renders with dividers
+- [x] Fonts are correct throughout
 
 Then run:
 ```bash
