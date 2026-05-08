@@ -109,16 +109,24 @@ export default function Skills() {
         </h1>
       </section>
 
-      {/* Design Tools */}
+      {/* Design Tools + Design Skills */}
       <section style={sectionStyle}>
-        <p style={labelStyle}>Design tools</p>
-        <SkillList items={designTools} accentColor="var(--blue)" />
-      </section>
-
-      {/* Design Skills */}
-      <section style={sectionStyle}>
-        <p style={labelStyle}>Design skills</p>
-        <SkillList items={designSkills} accentColor="var(--amber)" />
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "3rem",
+          }}
+        >
+          <div>
+            <p style={labelStyle}>Design tools</p>
+            <SkillList items={designTools} accentColor="var(--blue)" />
+          </div>
+          <div>
+            <p style={labelStyle}>Design skills</p>
+            <SkillList items={designSkills} accentColor="var(--amber)" />
+          </div>
+        </div>
       </section>
 
       {/* AI Workflow */}

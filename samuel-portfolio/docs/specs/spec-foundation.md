@@ -120,15 +120,15 @@ Never vague. Never generic.
 
 ## 7. Acceptance Criteria
 
-- [ ] All 5 routes render correctly
-- [ ] Nav highlights the active page on every route
-- [ ] Both fonts load correctly sitewide
-- [ ] Both case studies cover: problem, user, 4 design decisions,
-      features, next steps
-- [ ] About page covers: story, 3 principles, tools
-- [ ] Skills page explains the spec-driven AI workflow
-- [ ] npm run build passes
-- [ ] npm run lint passes
-- [ ] No gradients, shadows, or decorative elements anywhere
-- [ ] Readable on mobile (375px)
-- [ ] All internal links work
+- [x] All 5 routes render correctly
+- [x] Nav highlights the active page on every route
+- [x] Both fonts load correctly sitewide
+- [x] Both case studies cover: problem, user, 4 design decisions,
+    features, next steps
+- [x] About page covers: story, 3 principles, tools
+- [x] Skills page explains the spec-driven AI workflow
+- [x] npm run build passes
+- [x] npm run lint passes
+- [x] No gradients, shadows, or decorative elements anywhere
+- [x] Readable on mobile (375px)
+- [x] All internal links work
