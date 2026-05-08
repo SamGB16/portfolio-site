@@ -121,13 +121,13 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000:
-- [ ] Identity line appears above hero statement
-- [ ] Hero statement is large and the first thing you read
-- [ ] Description paragraph appears below hero statement
-- [ ] Two CTA links appear side by side
-- [ ] Stats row shows 3 columns with correct numbers and labels
-- [ ] Column dividers are visible between stats
-- [ ] Fonts are correct — DM Sans for statement, IBM Plex Sans for body
+- [x] Identity line appears above hero statement
+- [x] Hero statement is large and the first thing you read
+- [x] Description paragraph appears below hero statement
+- [x] Two CTA links appear side by side
+- [x] Stats row shows 3 columns with correct numbers and labels
+- [x] Column dividers are visible between stats
+- [x] Fonts are correct — DM Sans for statement, IBM Plex Sans for body
 
 Then run:
 ```bash
@@ -139,10 +139,10 @@ npm run lint
 
 ## Completion Checklist
 
-- [ ] Hero section renders correctly
-- [ ] Stats row renders correctly
-- [ ] No content below the stats row
-- [ ] npm run build passes
-- [ ] npm run lint passes
+- [x] Hero section renders correctly
+- [x] Stats row renders correctly
+- [x] No content below the stats row
+- [x] npm run build passes
+- [x] npm run lint passes
 
 ---
