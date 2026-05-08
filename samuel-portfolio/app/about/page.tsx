@@ -72,6 +72,8 @@ export default function About() {
               fontSize: "var(--font-body)",
               color: "var(--muted)",
               lineHeight: 1.9,
+              borderLeft: "3px solid var(--blue)",
+              paddingLeft: "1.25rem",
             }}
           >
             I work nights and weekends as a server and bartender in New Jersey —
@@ -87,6 +89,8 @@ export default function About() {
               fontSize: "var(--font-body)",
               color: "var(--muted)",
               lineHeight: 1.9,
+              borderLeft: "3px solid var(--blue)",
+              paddingLeft: "1.25rem",
             }}
           >
             At NJIT, I&apos;m learning that design is less about making things
@@ -103,7 +107,9 @@ export default function About() {
       <section
         style={{
           borderTop: "0.5px solid var(--border)",
-          padding: "3.5rem 0",
+          padding: "3.5rem 2rem",
+          background: "var(--blue-light)",
+          borderRadius: "12px",
         }}
       >
         <p style={labelStyle}>What drives me</p>
@@ -176,6 +182,8 @@ export default function About() {
                   fontSize: "14px",
                   fontWeight: 500,
                   color: "var(--text)",
+                  borderLeft: "3px solid var(--amber)",
+                  paddingLeft: "0.75rem",
                 }}
               >
                 {skill.name}

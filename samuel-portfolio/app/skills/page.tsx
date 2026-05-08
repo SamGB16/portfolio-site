@@ -39,7 +39,13 @@ const designSkills = [
   },
 ];
 
-function SkillList({ items }: { items: { name: string; description: string }[] }) {
+function SkillList({
+  items,
+  accentColor,
+}: {
+  items: { name: string; description: string }[];
+  accentColor?: string;
+}) {
   return (
     <div style={{ maxWidth: "560px" }}>
       {items.map((item) => (
@@ -50,6 +56,8 @@ function SkillList({ items }: { items: { name: string; description: string }[] }
             flexDirection: "column",
             padding: "0.75rem 0",
             borderBottom: "0.5px solid var(--border)",
+            borderLeft: accentColor ? `3px solid ${accentColor}` : undefined,
+            paddingLeft: accentColor ? "0.75rem" : undefined,
           }}
         >
           <span
@@ -104,17 +112,24 @@ export default function Skills() {
       {/* Design Tools */}
       <section style={sectionStyle}>
         <p style={labelStyle}>Design tools</p>
-        <SkillList items={designTools} />
+        <SkillList items={designTools} accentColor="var(--blue)" />
       </section>
 
       {/* Design Skills */}
       <section style={sectionStyle}>
         <p style={labelStyle}>Design skills</p>
-        <SkillList items={designSkills} />
+        <SkillList items={designSkills} accentColor="var(--amber)" />
       </section>
 
       {/* AI Workflow */}
-      <section style={sectionStyle}>
+      <section
+        style={{
+          ...sectionStyle,
+          background: "var(--blue-light)",
+          padding: "3.5rem 2rem",
+          borderRadius: "12px",
+        }}
+      >
         <p
           style={{
             ...labelStyle,
