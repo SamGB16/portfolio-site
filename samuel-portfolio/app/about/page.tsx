@@ -107,7 +107,7 @@ export default function About() {
       <section
         style={{
           borderTop: "0.5px solid var(--border)",
-          padding: "3.5rem 2rem",
+          padding: "3.5rem 2.5rem",
           background: "var(--blue-light)",
           borderRadius: "12px",
         }}
@@ -117,7 +117,7 @@ export default function About() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "1.5rem",
+            gap: "2rem",
           }}
         >
           {principles.map((card) => (
