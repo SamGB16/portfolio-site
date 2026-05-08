@@ -2,7 +2,7 @@
 
 **Type:** Change note
 **Risk:** Low
-**File affected:** app/page.tsx only
+**Files affected:** Any file containing the old email
 
 ---
 
@@ -15,12 +15,12 @@ samuelgiovab@gmail.com — this is the real email address.
 
 ## What to Change
 
-Find every instance of "samuel@example.com" in app/page.tsx
-and replace with "samuelgiovab@gmail.com".
+Find every instance of "samuel@example.com" across all files
+in the project and replace with "samuelgiovab@gmail.com".
 
 ---
 
 ## Invariants
 
-- Do not touch anything else
-- Do not modify any other files
+- Do not touch anything other than the email string
+- Do not modify any logic, layout, or styling

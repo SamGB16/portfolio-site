@@ -191,7 +191,7 @@ export default function Home() {
           pressure and don&apos;t need an interface that adds more.
         </p>
         <Link
-          href="mailto:samuel@example.com"
+          href="mailto:samuelgiovab@gmail.com"
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontSize: "12px",
@@ -202,7 +202,7 @@ export default function Home() {
             borderBottom: "1.5px solid var(--blue)",
           }}
         >
-          samuel@example.com
+          samuelgiovab@gmail.com
         </Link>
       </section>
 
