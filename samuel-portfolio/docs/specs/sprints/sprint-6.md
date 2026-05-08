@@ -161,15 +161,15 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000/ember:
-- [ ] Nav shows Work as active link
-- [ ] Amber color bar appears at top of header
-- [ ] All 5 sections render with correct labels and headings
-- [ ] Labels are amber not blue
-- [ ] 4 decision cards render in a 2-column grid
-- [ ] User quote block renders correctly
-- [ ] Features list renders with dividers
-- [ ] Next steps note block renders
-- [ ] Bottom nav links to /tiptrack and /#work
+- [x] Nav shows Work as active link
+- [x] Amber color bar appears at top of header
+- [x] All 5 sections render with correct labels and headings
+- [x] Labels are amber not blue
+- [x] 4 decision cards render in a 2-column grid
+- [x] User quote block renders correctly
+- [x] Features list renders with dividers
+- [x] Next steps note block renders
+- [x] Bottom nav links to /tiptrack and /#work
 
 Then run:
 ```bash
