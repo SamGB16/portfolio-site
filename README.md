@@ -128,6 +128,9 @@ AI handled execution so I could stay focused on judgment.
 ---
 
 ## Docs Structure
+## Docs Structure
+
+```
 docs/
 ├── specs/
 │   ├── spec-foundation.md    # Master spec
@@ -152,8 +155,7 @@ docs/
 │       ├── change-010        # Card spacing
 │       ├── change-011        # Fix deployment
 │       └── change-012        # Fix image paths
- 
-
+```
 ---
 
 ## Author
