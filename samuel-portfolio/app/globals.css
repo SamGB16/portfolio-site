@@ -9,10 +9,15 @@
   --amber-dark:  #854F0B;
   --text:        #1a1a18;
   --muted:       #6b6b67;
-  --border:      rgba(0,0,0,0.10);
+  --border:      rgba(0,0,0,0.15);
   --bg:          #f9f8f5;
   --white:       #ffffff;
   --max-width:   1080px;
+
+  --font-body:   17px;
+  --font-small:  14px;
+  --font-label:  12px;
+  --font-nav:    12px;
 }
 
 *,
@@ -32,7 +37,7 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.85;
   -webkit-font-smoothing: antialiased;
 }
 
