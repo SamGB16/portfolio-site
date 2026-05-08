@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,6 +12,11 @@ interface ProjectCardProps {
   accent: "blue" | "amber";
 }
 
+const imageMap: Record<string, { src: string; alt: string }> = {
+  "/tiptrack": { src: "/tiptrack-card.png", alt: "TipTrack app concept" },
+  "/ember":    { src: "/ember-card.png",    alt: "Ember app concept" },
+};
+
 export default function ProjectCard({
   title,
   tag,
@@ -20,6 +26,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
   const accentColor = accent === "blue" ? "var(--blue)" : "var(--amber)";
+  const image = imageMap[href];
 
   return (
     <Link
@@ -36,6 +43,11 @@ export default function ProjectCard({
         transition: "transform 0.25s",
       }}
     >
+      {image && (
+        <div style={{ position: "relative", height: "200px", width: "100%" }}>
+          <Image src={image.src} alt={image.alt} fill style={{ objectFit: "cover" }} />
+        </div>
+      )}
       <div
         style={{
           height: "5px",

@@ -75,6 +75,8 @@ export default function Ember() {
         title="Ember"
         subtitle="A private burnout journal for people who don't have time to journal — designed to feel like a quiet room, not a clinical form."
         accent="amber"
+        imageSrc="/ember-card.png"
+        imageAlt="Ember app concept"
       />
 
       {/* The Problem */}

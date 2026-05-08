@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 interface CaseHeaderProps {
   tag: string;
   title: string;
   subtitle: string;
   accent: "blue" | "amber";
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export default function CaseHeader({
@@ -10,6 +14,8 @@ export default function CaseHeader({
   title,
   subtitle,
   accent,
+  imageSrc,
+  imageAlt,
 }: CaseHeaderProps) {
   const accentColor = accent === "blue" ? "var(--blue)" : "var(--amber)";
 
@@ -60,6 +66,25 @@ export default function CaseHeader({
       >
         {subtitle}
       </p>
+      {imageSrc && (
+        <div
+          style={{
+            position: "relative",
+            height: "360px",
+            width: "100%",
+            borderRadius: "12px",
+            overflow: "hidden",
+            marginTop: "2.5rem",
+          }}
+        >
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? ""}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      )}
     </div>
   );
 }

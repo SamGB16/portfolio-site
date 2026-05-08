@@ -75,6 +75,8 @@ export default function TipTrack() {
         title="TipTrack"
         subtitle="A budget app designed for tipped workers in college — built around the reality of unpredictable, cash-based income."
         accent="blue"
+        imageSrc="/tiptrack-card.png"
+        imageAlt="TipTrack app concept"
       />
 
       {/* The Problem */}
