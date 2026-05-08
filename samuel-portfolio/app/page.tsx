@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import ProjectCard from "@/components/content/ProjectCard";
 
 function SecondaryLink({
   href,
@@ -99,6 +100,110 @@ export default function Home() {
           </Link>
           <SecondaryLink href="/about">About me →</SecondaryLink>
         </div>
+      </section>
+
+      <section
+        id="work"
+        style={{
+          borderTop: "0.5px solid var(--border)",
+          padding: "5rem 0",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: "11px",
+            textTransform: "uppercase",
+            letterSpacing: "0.12em",
+            fontWeight: 500,
+            color: "var(--blue)",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Selected Work
+        </p>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "1.5rem",
+          }}
+        >
+          <ProjectCard
+            tag="Finance · Mobile"
+            title="TipTrack"
+            description="A budget app designed for tipped workers in college — built around the reality of unpredictable, cash-based income."
+            href="/tiptrack"
+            accent="blue"
+          />
+          <ProjectCard
+            tag="Wellness · Mobile"
+            title="Ember"
+            description="A private burnout journal for people who don't have time to journal — designed to feel like a quiet room, not a clinical form."
+            href="/ember"
+            accent="amber"
+          />
+        </div>
+      </section>
+
+      <section
+        style={{
+          borderTop: "0.5px solid var(--border)",
+          padding: "5rem 0",
+          maxWidth: "640px",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: "11px",
+            textTransform: "uppercase",
+            letterSpacing: "0.12em",
+            fontWeight: 500,
+            color: "var(--muted)",
+            marginBottom: "1.5rem",
+          }}
+        >
+          What I&apos;m looking for
+        </p>
+        <h2
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "1.75rem",
+            fontWeight: 500,
+            letterSpacing: "-0.02em",
+            marginBottom: "1rem",
+          }}
+        >
+          Teams building tools that take real people seriously.
+        </h2>
+        <p
+          style={{
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: "16px",
+            color: "var(--muted)",
+            lineHeight: 1.8,
+            marginBottom: "1.5rem",
+          }}
+        >
+          I&apos;m especially interested in finance, wellness, and the messy
+          overlap between the two — products for people who are already under
+          pressure and don&apos;t need an interface that adds more.
+        </p>
+        <Link
+          href="mailto:samuel@example.com"
+          style={{
+            fontFamily: "'IBM Plex Sans', sans-serif",
+            fontSize: "12px",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            fontWeight: 500,
+            color: "var(--blue)",
+            borderBottom: "1.5px solid var(--blue)",
+          }}
+        >
+          samuel@example.com
+        </Link>
       </section>
 
     </div>

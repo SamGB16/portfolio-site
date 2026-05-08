@@ -158,14 +158,14 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000:
-- [ ] "Selected Work" label appears above the project cards
-- [ ] Two project cards render side by side
-- [ ] TipTrack card has blue color bar and blue accent text
-- [ ] Ember card has amber color bar and amber accent text
-- [ ] Both cards link to correct routes (/tiptrack, /ember)
-- [ ] Card hover lifts slightly
-- [ ] Looking for section appears below the cards
-- [ ] Email link has blue underline
+- [x] "Selected Work" label appears above the project cards
+- [x] Two project cards render side by side
+- [x] TipTrack card has blue color bar and blue accent text
+- [x] Ember card has amber color bar and amber accent text
+- [x] Both cards link to correct routes (/tiptrack, /ember)
+- [x] Card hover lifts slightly
+- [x] Looking for section appears below the cards
+- [x] Email link has blue underline
 
 Then run:
 ```bash
