@@ -113,12 +113,12 @@ Both must pass with no errors.
 
 ## Completion Checklist
 
-- [ ] Nav renders on all 5 routes
-- [ ] Footer renders on all 5 routes
-- [ ] "SB" monogram links to /
-- [ ] Active nav link is highlighted correctly on each route
-- [ ] All 5 routes load without errors
-- [ ] npm run build passes
-- [ ] npm run lint passes
+- [x] Nav renders on all 5 routes
+- [x] Footer renders on all 5 routes
+- [x] "SB" monogram links to /
+- [x] Active nav link is highlighted correctly on each route
+- [x] All 5 routes load without errors
+- [x] npm run build passes
+- [x] npm run lint passes
 
 ---
