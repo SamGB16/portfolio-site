@@ -31,21 +31,6 @@ function SecondaryLink({
   );
 }
 
-const stats = [
-  {
-    number: "2",
-    label: "Product concepts in active development",
-  },
-  {
-    number: "1",
-    label: "Core user problem per project, no exceptions",
-  },
-  {
-    number: "0",
-    label: "Existing tools that solved these problems well enough",
-  },
-];
-
 export default function Home() {
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
@@ -116,49 +101,6 @@ export default function Home() {
         </div>
       </section>
 
-      <div
-        style={{
-          borderTop: "0.5px solid var(--border)",
-          borderBottom: "0.5px solid var(--border)",
-          margin: "4rem 0",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr 1fr",
-        }}
-      >
-        {stats.map((stat, i) => (
-          <div
-            key={stat.number + stat.label}
-            style={{
-              padding: "2rem",
-              borderRight: i < 2 ? "0.5px solid var(--border)" : undefined,
-            }}
-          >
-            <p
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "2.5rem",
-                fontWeight: 500,
-                letterSpacing: "-0.03em",
-                color: "var(--text)",
-              }}
-            >
-              {stat.number}
-            </p>
-            <p
-              style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: "13px",
-                color: "var(--muted)",
-                marginTop: "0.5rem",
-                lineHeight: 1.4,
-                maxWidth: "180px",
-              }}
-            >
-              {stat.label}
-            </p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
