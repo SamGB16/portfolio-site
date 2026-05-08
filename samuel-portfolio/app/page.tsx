@@ -17,7 +17,7 @@ function SecondaryLink({
       href={href}
       style={{
         fontFamily: "'IBM Plex Sans', sans-serif",
-        fontSize: "12px",
+        fontSize: "var(--font-nav)",
         textTransform: "uppercase",
         letterSpacing: "0.08em",
         fontWeight: 500,
@@ -39,7 +39,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "12px",
+            fontSize: "var(--font-nav)",
             textTransform: "uppercase",
             letterSpacing: "0.10em",
             color: "var(--muted)",
@@ -68,7 +68,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "16px",
+            fontSize: "var(--font-body)",
             fontWeight: 400,
             color: "var(--muted)",
             maxWidth: "560px",
@@ -88,7 +88,7 @@ export default function Home() {
             href="/#work"
             style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "12px",
+              fontSize: "var(--font-nav)",
               textTransform: "uppercase",
               letterSpacing: "0.08em",
               fontWeight: 500,
@@ -112,7 +112,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "11px",
+            fontSize: "var(--font-label)",
             textTransform: "uppercase",
             letterSpacing: "0.12em",
             fontWeight: 500,
@@ -156,7 +156,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "11px",
+            fontSize: "var(--font-label)",
             textTransform: "uppercase",
             letterSpacing: "0.12em",
             fontWeight: 500,
@@ -180,7 +180,7 @@ export default function Home() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "16px",
+            fontSize: "var(--font-body)",
             color: "var(--muted)",
             lineHeight: 1.8,
             marginBottom: "1.5rem",
@@ -194,7 +194,7 @@ export default function Home() {
           href="mailto:samuelgiovab@gmail.com"
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "12px",
+            fontSize: "var(--font-nav)",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             fontWeight: 500,

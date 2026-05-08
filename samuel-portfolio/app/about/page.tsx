@@ -1,6 +1,6 @@
 const labelStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
-  fontSize: "11px",
+  fontSize: "var(--font-label)",
   textTransform: "uppercase",
   letterSpacing: "0.12em",
   fontWeight: 500,
@@ -69,7 +69,7 @@ export default function About() {
           <p
             style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "15px",
+              fontSize: "var(--font-body)",
               color: "var(--muted)",
               lineHeight: 1.9,
             }}
@@ -84,7 +84,7 @@ export default function About() {
           <p
             style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "15px",
+              fontSize: "var(--font-body)",
               color: "var(--muted)",
               lineHeight: 1.9,
             }}
@@ -127,7 +127,7 @@ export default function About() {
               <h3
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "15px",
+                  fontSize: "var(--font-body)",
                   fontWeight: 500,
                   color: "var(--text)",
                   marginBottom: "0.5rem",
@@ -138,7 +138,7 @@ export default function About() {
               <p
                 style={{
                   fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "13px",
+                  fontSize: "var(--font-small)",
                   color: "var(--muted)",
                   lineHeight: 1.7,
                 }}
@@ -183,7 +183,7 @@ export default function About() {
               <span
                 style={{
                   fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "13px",
+                  fontSize: "var(--font-small)",
                   color: "var(--muted)",
                   marginTop: "0.2rem",
                 }}

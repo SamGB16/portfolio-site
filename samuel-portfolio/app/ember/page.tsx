@@ -9,7 +9,7 @@ const sectionStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
-  fontSize: "11px",
+  fontSize: "var(--font-label)",
   textTransform: "uppercase",
   letterSpacing: "0.12em",
   fontWeight: 500,
@@ -27,7 +27,7 @@ const h2Style: React.CSSProperties = {
 
 const bodyStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
-  fontSize: "15px",
+  fontSize: "var(--font-body)",
   color: "var(--muted)",
   lineHeight: 1.85,
   maxWidth: "680px",
@@ -177,7 +177,7 @@ export default function Ember() {
               key={feature}
               style={{
                 fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: "15px",
+                fontSize: "var(--font-body)",
                 color: "var(--muted)",
                 lineHeight: 1.85,
                 padding: "0.75rem 0",
@@ -234,7 +234,7 @@ export default function Ember() {
           href="/tiptrack"
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "12px",
+            fontSize: "var(--font-nav)",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             fontWeight: 500,
@@ -247,7 +247,7 @@ export default function Ember() {
           href="/#work"
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "12px",
+            fontSize: "var(--font-nav)",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             fontWeight: 500,

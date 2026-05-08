@@ -16,7 +16,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
       href={href}
       style={{
         fontFamily: "'IBM Plex Sans', sans-serif",
-        fontSize: "11px",
+        fontSize: "var(--font-label)",
         textTransform: "uppercase",
         letterSpacing: "0.08em",
         color: hovered ? "var(--text)" : "var(--muted)",

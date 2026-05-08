@@ -33,7 +33,7 @@ export default function CaseHeader({
       <p
         style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
-          fontSize: "11px",
+          fontSize: "var(--font-label)",
           textTransform: "uppercase",
           letterSpacing: "0.10em",
           fontWeight: 500,
@@ -59,7 +59,7 @@ export default function CaseHeader({
       <p
         style={{
           fontFamily: "'IBM Plex Sans', sans-serif",
-          fontSize: "16px",
+          fontSize: "var(--font-body)",
           color: "var(--muted)",
           maxWidth: "520px",
         }}

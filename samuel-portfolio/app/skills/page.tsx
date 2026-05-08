@@ -1,6 +1,6 @@
 const labelStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
-  fontSize: "11px",
+  fontSize: "var(--font-label)",
   textTransform: "uppercase",
   letterSpacing: "0.12em",
   fontWeight: 500,
@@ -65,7 +65,7 @@ function SkillList({ items }: { items: { name: string; description: string }[] }
           <span
             style={{
               fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "13px",
+              fontSize: "var(--font-small)",
               color: "var(--muted)",
               marginTop: "0.2rem",
             }}
@@ -137,7 +137,7 @@ export default function Skills() {
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "15px",
+            fontSize: "var(--font-body)",
             color: "var(--muted)",
             lineHeight: 1.85,
             maxWidth: "580px",

@@ -26,7 +26,7 @@ function NavLink({
       href={href}
       style={{
         fontFamily: "'IBM Plex Sans', sans-serif",
-        fontSize: "11px",
+        fontSize: "var(--font-label)",
         textTransform: "uppercase",
         letterSpacing: "0.10em",
         color: isActive || hovered ? "var(--text)" : "var(--muted)",

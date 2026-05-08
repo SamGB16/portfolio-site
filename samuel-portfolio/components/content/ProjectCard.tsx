@@ -58,7 +58,7 @@ export default function ProjectCard({
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "11px",
+            fontSize: "var(--font-label)",
             textTransform: "uppercase",
             letterSpacing: "0.10em",
             fontWeight: 500,
@@ -95,7 +95,7 @@ export default function ProjectCard({
         <p
           style={{
             fontFamily: "'IBM Plex Sans', sans-serif",
-            fontSize: "11px",
+            fontSize: "var(--font-label)",
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             fontWeight: 500,
