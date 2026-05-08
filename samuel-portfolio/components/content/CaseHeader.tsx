@@ -78,7 +78,7 @@ export default function CaseHeader({
           }}
         >
           <Image
-            src={imageSrc}
+            src={`/portfolio-site${imageSrc}`}
             alt={imageAlt ?? ""}
             fill
             style={{ objectFit: "cover" }}

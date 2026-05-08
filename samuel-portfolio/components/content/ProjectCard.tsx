@@ -13,8 +13,8 @@ interface ProjectCardProps {
 }
 
 const imageMap: Record<string, { src: string; alt: string }> = {
-  "/tiptrack": { src: "/tiptrack-card.png", alt: "TipTrack app concept" },
-  "/ember":    { src: "/ember-card.png",    alt: "Ember app concept" },
+  "/tiptrack": { src: "/portfolio-site/tiptrack-card.png", alt: "TipTrack app concept" },
+  "/ember":    { src: "/portfolio-site/ember-card.png",    alt: "Ember app concept" },
 };
 
 export default function ProjectCard({
