@@ -137,13 +137,13 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000/skills:
-- [ ] Nav shows Skills as active link
-- [ ] Large statement renders correctly
-- [ ] Design tools section lists 3 items with dividers
-- [ ] Design skills section lists 4 items with dividers
-- [ ] AI workflow section renders with blue label
-- [ ] Quote block has blue-light background
-- [ ] All fonts are correct throughout
+- [x] Nav shows Skills as active link
+- [x] Large statement renders correctly
+- [x] Design tools section lists 3 items with dividers
+- [x] Design skills section lists 4 items with dividers
+- [x] AI workflow section renders with blue label
+- [x] Quote block has blue-light background
+- [x] All fonts are correct throughout
 
 Then run:
 ```bash
