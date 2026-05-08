@@ -1,0 +1,65 @@
+interface CaseHeaderProps {
+  tag: string;
+  title: string;
+  subtitle: string;
+  accent: "blue" | "amber";
+}
+
+export default function CaseHeader({
+  tag,
+  title,
+  subtitle,
+  accent,
+}: CaseHeaderProps) {
+  const accentColor = accent === "blue" ? "var(--blue)" : "var(--amber)";
+
+  return (
+    <div style={{ padding: "5rem 0 4rem" }}>
+      <div
+        style={{
+          height: "4px",
+          width: "48px",
+          borderRadius: "2px",
+          background: accentColor,
+          marginBottom: "2rem",
+        }}
+      />
+      <p
+        style={{
+          fontFamily: "'IBM Plex Sans', sans-serif",
+          fontSize: "11px",
+          textTransform: "uppercase",
+          letterSpacing: "0.10em",
+          fontWeight: 500,
+          color: accentColor,
+          marginBottom: "1.25rem",
+        }}
+      >
+        {tag}
+      </p>
+      <h1
+        style={{
+          fontFamily: "'DM Sans', sans-serif",
+          fontSize: "clamp(2rem, 5vw, 3.5rem)",
+          fontWeight: 500,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.05,
+          color: "var(--text)",
+          marginBottom: "0.75rem",
+        }}
+      >
+        {title}
+      </h1>
+      <p
+        style={{
+          fontFamily: "'IBM Plex Sans', sans-serif",
+          fontSize: "16px",
+          color: "var(--muted)",
+          maxWidth: "520px",
+        }}
+      >
+        {subtitle}
+      </p>
+    </div>
+  );
+}

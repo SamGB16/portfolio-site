@@ -235,14 +235,14 @@ npm run dev
 ```
 
 Check in browser at http://localhost:3000/tiptrack:
-- [ ] Nav shows Work as active link
-- [ ] Blue color bar appears at top of header
-- [ ] All 5 sections render with correct labels and headings
-- [ ] 4 decision cards render in a 2-column grid
-- [ ] User quote block renders correctly
-- [ ] Features list renders with dividers
-- [ ] Next steps note block renders
-- [ ] Bottom nav links to / and /ember
+- [x] Nav shows Work as active link
+- [x] Blue color bar appears at top of header
+- [x] All 5 sections render with correct labels and headings
+- [x] 4 decision cards render in a 2-column grid
+- [x] User quote block renders correctly
+- [x] Features list renders with dividers
+- [x] Next steps note block renders
+- [x] Bottom nav links to / and /ember
 
 Then run:
 ```bash
