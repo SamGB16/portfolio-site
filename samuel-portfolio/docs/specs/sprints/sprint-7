@@ -1,0 +1,152 @@
+# Sprint 7 — Skills Page
+
+**Goal:** Build the full Skills page. This page covers design tools,
+design skills, and most importantly the spec-driven AI workflow —
+which is a core part of the IS117 assignment requirements.
+
+**Reference:** docs/specs/spec-foundation.md sections 4 and 5
+
+---
+
+## Files Expected to Change
+
+- app/skills/page.tsx
+
+## Files That Must Not Change
+
+- app/layout.tsx
+- components/ui/Nav.tsx
+- components/ui/Footer.tsx
+- app/globals.css
+- next.config.ts
+- app/page.tsx
+- app/about/page.tsx
+- app/tiptrack/page.tsx
+- app/ember/page.tsx
+
+---
+
+## Tasks
+
+1. Build the skills hero section
+
+   Container: max-width var(--max-width), margin auto, padding 0 2rem
+   Section padding: 6rem 0 4rem
+
+   Label:
+   - Text: "Skills"
+   - IBM Plex Sans, 11px, uppercase, letter-spacing 0.12em,
+     weight 500, color var(--muted), margin-bottom 1.5rem
+
+   Statement:
+   - Text: "I'm learning deliberately — one tool, one concept,
+     one decision at a time."
+   - Font: DM Sans, clamp(1.6rem, 3.5vw, 2.5rem), weight 500
+   - Letter-spacing: -0.02em, line-height: 1.15
+   - Color: var(--text)
+   - Max-width: 700px
+
+2. Build the design tools section
+
+   Border-top: 0.5px solid var(--border)
+   Padding: 5rem 0
+
+   Label: "Design tools"
+
+   Each tool item:
+   - Layout: flex column
+   - Padding: 0.75rem 0
+   - Border-bottom: 0.5px solid var(--border)
+   - Max-width: 560px
+
+   Tool name:
+   - IBM Plex Sans, 14px, weight 500, color var(--text)
+
+   Tool description:
+   - IBM Plex Sans, 13px, color var(--muted), margin-top 0.2rem
+
+   Items:
+   - Figma — "UI design, component building, prototyping"
+   - FigJam — "User flows and journey mapping"
+   - Miro — "Research synthesis and ideation"
+
+3. Build the design skills section
+
+   Border-top: 0.5px solid var(--border)
+   Padding: 5rem 0
+
+   Label: "Design skills"
+
+   Same item structure as design tools. Max-width: 560px.
+
+   Items:
+   - User research — "Identifying real problems through observation
+     and lived experience"
+   - Wireframing — "Translating ideas into structure before aesthetics"
+   - UX writing — "Clear, human language inside interfaces"
+   - Case study writing — "Documenting design decisions and reasoning"
+
+4. Build the AI workflow section
+
+   Border-top: 0.5px solid var(--border)
+   Padding: 5rem 0
+
+   Label:
+   - Text: "AI workflow"
+   - Color: var(--blue)
+
+   H2: "Spec-driven development."
+   - DM Sans, 1.5rem, weight 500, letter-spacing -0.02em
+   - Margin-bottom: 1rem
+
+   Body:
+   - Text: "A workflow where I write the detailed spec, AI builds
+     from it, and I review, revise, and redirect. The decisions
+     are mine. The reasoning is mine. AI handles execution so I
+     can stay focused on judgment."
+   - IBM Plex Sans, 15px, color var(--muted), line-height 1.85
+   - Max-width: 580px
+   - Margin-bottom: 1.5rem
+
+   Quote block:
+   - Background: var(--blue-light)
+   - Border-radius: 10px
+   - Padding: 1.5rem 2rem
+   - Max-width: 580px
+   - Text: "I use AI as a junior developer and writing partner,
+     not a replacement for thinking. I plan first, spec second,
+     prompt third — and I treat every output as a draft that
+     needs my editorial eye before it's real."
+   - IBM Plex Sans, 14px, color var(--blue-dark), line-height 1.8
+
+---
+
+## Invariants — Do Not Change
+
+- Do not modify any other page
+- Do not modify any shared components (Nav, Footer, layout)
+- Do not modify globals.css or next.config.ts
+- Do not install any new packages
+
+---
+
+## Verification
+
+```bash
+npm run dev
+```
+
+Check in browser at http://localhost:3000/skills:
+- [ ] Nav shows Skills as active link
+- [ ] Large statement renders correctly
+- [ ] Design tools section lists 3 items with dividers
+- [ ] Design skills section lists 4 items with dividers
+- [ ] AI workflow section renders with blue label
+- [ ] Quote block has blue-light background
+- [ ] All fonts are correct throughout
+
+Then run:
+```bash
+npm run build
+npm run lint
+```
