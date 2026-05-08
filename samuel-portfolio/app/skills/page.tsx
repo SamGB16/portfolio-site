@@ -10,7 +10,7 @@ const labelStyle: React.CSSProperties = {
 
 const sectionStyle: React.CSSProperties = {
   borderTop: "0.5px solid var(--border)",
-  padding: "5rem 0",
+  padding: "3.5rem 0",
 };
 
 const designTools = [

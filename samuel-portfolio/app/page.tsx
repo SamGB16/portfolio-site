@@ -106,7 +106,7 @@ export default function Home() {
         id="work"
         style={{
           borderTop: "0.5px solid var(--border)",
-          padding: "5rem 0",
+          padding: "3.5rem 0",
         }}
       >
         <p
@@ -149,7 +149,7 @@ export default function Home() {
       <section
         style={{
           borderTop: "0.5px solid var(--border)",
-          padding: "5rem 0",
+          padding: "3.5rem 0",
           maxWidth: "640px",
         }}
       >

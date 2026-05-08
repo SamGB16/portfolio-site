@@ -18,6 +18,8 @@
   --font-small:  14px;
   --font-label:  12px;
   --font-nav:    12px;
+
+  --section-padding: 3.5rem 0;
 }
 
 *,
