@@ -114,7 +114,7 @@ Never vague. Never generic.
 | 5 | TipTrack case study |
 | 6 | Ember case study |
 | 7 | Skills page |
-| 8 | Polish, mobile, final review |
+| 8 | Polish, mobile, final review | - done by change notes instead to keep correct structure.
 
 ---
 
