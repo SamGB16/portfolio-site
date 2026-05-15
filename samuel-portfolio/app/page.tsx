@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useState } from "react";
 import ProjectCard from "@/components/content/ProjectCard";
@@ -40,6 +41,7 @@ export default function Home() {
           style={{
             background: "var(--hero-bg)",
             border: "1px solid var(--border)",
+            borderTop: "3px solid var(--blue)",
             borderRadius: "12px",
             padding: "3rem 3.5rem",
           }}
@@ -107,6 +109,88 @@ export default function Home() {
               View projects ↓
             </Link>
             <SecondaryLink href="/about">About me →</SecondaryLink>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style={{
+          borderTop: "0.5px solid var(--border)",
+          padding: "3.5rem 0",
+        }}
+      >
+        <div style={{ maxWidth: "680px", margin: "0 auto" }}>
+          <p
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "1.1rem",
+              fontWeight: 500,
+              color: "var(--text)",
+              textAlign: "center",
+              marginBottom: "2rem",
+            }}
+          >
+            How I build
+          </p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
+              flexWrap: "wrap",
+            }}
+          >
+            {[["01", "Spec"], ["02", "Sprint"], ["03", "Build"], ["04", "Review"]].map(
+              ([num, label], i, arr) => (
+                <React.Fragment key={num}>
+                  <div
+                    style={{
+                      background: "var(--white)",
+                      border: "1px solid var(--border)",
+                      borderRadius: "10px",
+                      padding: "1rem 1.25rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        fontSize: "11px",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.10em",
+                        color: "var(--blue)",
+                        marginBottom: "0.25rem",
+                      }}
+                    >
+                      {num}
+                    </p>
+                    <p
+                      style={{
+                        fontFamily: "'DM Sans', sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        color: "var(--text)",
+                      }}
+                    >
+                      {label}
+                    </p>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <span
+                      style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        fontSize: "16px",
+                        color: "var(--muted)",
+                        flexShrink: 0,
+                      }}
+                    >
+                      →
+                    </span>
+                  )}
+                </React.Fragment>
+              )
+            )}
           </div>
         </div>
       </section>
