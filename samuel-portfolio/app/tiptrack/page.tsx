@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import CaseHeader from "@/components/content/CaseHeader";
 import DecisionCard from "@/components/content/DecisionCard";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const sectionStyle: React.CSSProperties = {
   borderTop: "0.5px solid var(--border)",
@@ -67,20 +70,39 @@ const features = [
   "Affordability check — based on your last 4 weeks of actual earnings",
 ];
 
+function FadeItem({ children, delay }: { children: React.ReactNode; delay?: string }) {
+  const { ref, isVisible } = useFadeIn();
+  return (
+    <div ref={ref} className={`fade-up${isVisible ? " visible" : ""}${delay ? ` ${delay}` : ""}`}>
+      {children}
+    </div>
+  );
+}
+
 export default function TipTrack() {
+  const { ref: headerRef, isVisible: headerVisible } = useFadeIn();
+  const { ref: problemRef, isVisible: problemVisible } = useFadeIn();
+  const { ref: userRef, isVisible: userVisible } = useFadeIn();
+  const { ref: decisionsLabelRef, isVisible: decisionsLabelVisible } = useFadeIn();
+  const { ref: featuresRef, isVisible: featuresVisible } = useFadeIn();
+  const { ref: nextRef, isVisible: nextVisible } = useFadeIn();
+  const { ref: navRef, isVisible: navVisible } = useFadeIn();
+
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
-      <CaseHeader
-        tag="Finance · Mobile · Concept"
-        title="TipTrack"
-        subtitle="A budget app designed for tipped workers in college — built around the reality of unpredictable, cash-based income."
-        accent="blue"
-        imageSrc="/tiptrack-card.png"
-        imageAlt="TipTrack app concept"
-      />
+      <div ref={headerRef} className={`fade-up${headerVisible ? " visible" : ""}`}>
+        <CaseHeader
+          tag="Finance · Mobile · Concept"
+          title="TipTrack"
+          subtitle="A budget app designed for tipped workers in college — built around the reality of unpredictable, cash-based income."
+          accent="blue"
+          imageSrc="/tiptrack-card.png"
+          imageAlt="TipTrack app concept"
+        />
+      </div>
 
       {/* The Problem */}
-      <section style={sectionStyle}>
+      <section ref={problemRef} className={`fade-up${problemVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>The Problem</p>
         <h2 style={h2Style}>Budgeting apps weren&apos;t built for us.</h2>
         <p style={bodyStyle}>
@@ -95,7 +117,7 @@ export default function TipTrack() {
       </section>
 
       {/* Target User */}
-      <section style={sectionStyle}>
+      <section ref={userRef} className={`fade-up${userVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Target User</p>
         <h2 style={h2Style}>College students working tipped jobs.</h2>
         <p style={bodyStyle}>
@@ -141,8 +163,10 @@ export default function TipTrack() {
 
       {/* Design Decisions */}
       <section style={sectionStyle}>
-        <p style={labelStyle}>Why I made these decisions</p>
-        <h2 style={h2Style}>Design approach.</h2>
+        <div ref={decisionsLabelRef} className={`fade-up${decisionsLabelVisible ? " visible" : ""}`}>
+          <p style={labelStyle}>Why I made these decisions</p>
+          <h2 style={h2Style}>Design approach.</h2>
+        </div>
         <div
           style={{
             display: "grid",
@@ -151,19 +175,20 @@ export default function TipTrack() {
             marginTop: "1.5rem",
           }}
         >
-          {decisions.map((d) => (
-            <DecisionCard
-              key={d.number}
-              number={d.number}
-              title={d.title}
-              description={d.description}
-            />
+          {decisions.map((d, index) => (
+            <FadeItem key={d.number} delay={index < 3 ? `delay-${index + 1}` : undefined}>
+              <DecisionCard
+                number={d.number}
+                title={d.title}
+                description={d.description}
+              />
+            </FadeItem>
           ))}
         </div>
       </section>
 
       {/* Core Features */}
-      <section style={sectionStyle}>
+      <section ref={featuresRef} className={`fade-up${featuresVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Core Features</p>
         <h2 style={h2Style}>What TipTrack does.</h2>
         <div style={{ maxWidth: "680px" }}>
@@ -189,7 +214,7 @@ export default function TipTrack() {
       </section>
 
       {/* Next Steps */}
-      <section style={sectionStyle}>
+      <section ref={nextRef} className={`fade-up${nextVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Next Steps</p>
         <h2 style={h2Style}>What I&apos;d do next.</h2>
         <div
@@ -219,6 +244,8 @@ export default function TipTrack() {
 
       {/* Bottom Nav */}
       <div
+        ref={navRef}
+        className={`fade-up${navVisible ? " visible" : ""}`}
         style={{
           borderTop: "0.5px solid var(--border)",
           padding: "3rem 0",

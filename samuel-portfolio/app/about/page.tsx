@@ -1,3 +1,7 @@
+"use client";
+
+import { useFadeIn } from "@/hooks/useFadeIn";
+
 const labelStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
   fontSize: "var(--font-label)",
@@ -37,7 +41,21 @@ const skills = [
   },
 ];
 
+function FadeItem({ children, delay }: { children: React.ReactNode; delay?: string }) {
+  const { ref, isVisible } = useFadeIn();
+  return (
+    <div ref={ref} className={`fade-up${isVisible ? " visible" : ""}${delay ? ` ${delay}` : ""}`}>
+      {children}
+    </div>
+  );
+}
+
 export default function About() {
+  const { ref: heroRef, isVisible: heroVisible } = useFadeIn();
+  const { ref: gridRef, isVisible: gridVisible } = useFadeIn();
+  const { ref: drivesRef, isVisible: drivesVisible } = useFadeIn();
+  const { ref: learningRef, isVisible: learningVisible } = useFadeIn();
+
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
 
@@ -45,6 +63,8 @@ export default function About() {
       <section style={{ padding: "6rem 0 4rem" }}>
         <p style={labelStyle}>About</p>
         <h1
+          ref={heroRef}
+          className={`fade-up${heroVisible ? " visible" : ""}`}
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "clamp(1.6rem, 3.5vw, 2.5rem)",
@@ -60,6 +80,8 @@ export default function About() {
           I&apos;m learning to build them.
         </h1>
         <div
+          ref={gridRef}
+          className={`fade-up${gridVisible ? " visible" : ""}`}
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -105,6 +127,8 @@ export default function About() {
 
       {/* What drives me */}
       <section
+        ref={drivesRef}
+        className={`fade-up${drivesVisible ? " visible" : ""}`}
         style={{
           borderTop: "0.5px solid var(--border)",
           padding: "3.5rem 2.5rem",
@@ -120,44 +144,47 @@ export default function About() {
             gap: "2rem",
           }}
         >
-          {principles.map((card) => (
-            <div
-              key={card.title}
-              style={{
-                background: "var(--white)",
-                border: "0.5px solid var(--border)",
-                borderRadius: "10px",
-                padding: "1.5rem",
-              }}
-            >
-              <h3
+          {principles.map((card, index) => (
+            <FadeItem key={card.title} delay={`delay-${index + 1}`}>
+              <div
                 style={{
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontSize: "var(--font-body)",
-                  fontWeight: 500,
-                  color: "var(--text)",
-                  marginBottom: "0.5rem",
+                  background: "var(--white)",
+                  border: "0.5px solid var(--border)",
+                  borderRadius: "10px",
+                  padding: "1.5rem",
                 }}
               >
-                {card.title}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "var(--font-small)",
-                  color: "var(--muted)",
-                  lineHeight: 1.7,
-                }}
-              >
-                {card.body}
-              </p>
-            </div>
+                <h3
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "var(--font-body)",
+                    fontWeight: 500,
+                    color: "var(--text)",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {card.title}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontSize: "var(--font-small)",
+                    color: "var(--muted)",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  {card.body}
+                </p>
+              </div>
+            </FadeItem>
           ))}
         </div>
       </section>
 
       {/* Currently learning */}
       <section
+        ref={learningRef}
+        className={`fade-up${learningVisible ? " visible" : ""}`}
         style={{
           borderTop: "0.5px solid var(--border)",
           padding: "3.5rem 0",
@@ -166,39 +193,40 @@ export default function About() {
       >
         <p style={labelStyle}>Currently learning</p>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                padding: "0.75rem 0",
-                borderBottom: "0.5px solid var(--border)",
-              }}
-            >
-              <span
+          {skills.map((skill, index) => (
+            <FadeItem key={skill.name} delay={`delay-${(index % 3) + 1}`}>
+              <div
                 style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 500,
-                  color: "var(--text)",
-                  borderLeft: "3px solid var(--amber)",
-                  paddingLeft: "0.75rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  padding: "0.75rem 0",
+                  borderBottom: "0.5px solid var(--border)",
                 }}
               >
-                {skill.name}
-              </span>
-              <span
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "var(--font-small)",
-                  color: "var(--muted)",
-                  marginTop: "0.2rem",
-                }}
-              >
-                {skill.description}
-              </span>
-            </div>
+                <span
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    color: "var(--text)",
+                    borderLeft: "3px solid var(--amber)",
+                    paddingLeft: "0.75rem",
+                  }}
+                >
+                  {skill.name}
+                </span>
+                <span
+                  style={{
+                    fontFamily: "'IBM Plex Sans', sans-serif",
+                    fontSize: "var(--font-small)",
+                    color: "var(--muted)",
+                    marginTop: "0.2rem",
+                  }}
+                >
+                  {skill.description}
+                </span>
+              </div>
+            </FadeItem>
           ))}
         </div>
       </section>

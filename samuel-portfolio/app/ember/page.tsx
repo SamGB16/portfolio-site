@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import CaseHeader from "@/components/content/CaseHeader";
 import DecisionCard from "@/components/content/DecisionCard";
+import { useFadeIn } from "@/hooks/useFadeIn";
 
 const sectionStyle: React.CSSProperties = {
   borderTop: "0.5px solid var(--border)",
@@ -67,20 +70,39 @@ const features = [
   "Fully private — no social layer, no sharing, no comparison",
 ];
 
+function FadeItem({ children, delay }: { children: React.ReactNode; delay?: string }) {
+  const { ref, isVisible } = useFadeIn();
+  return (
+    <div ref={ref} className={`fade-up${isVisible ? " visible" : ""}${delay ? ` ${delay}` : ""}`}>
+      {children}
+    </div>
+  );
+}
+
 export default function Ember() {
+  const { ref: headerRef, isVisible: headerVisible } = useFadeIn();
+  const { ref: problemRef, isVisible: problemVisible } = useFadeIn();
+  const { ref: userRef, isVisible: userVisible } = useFadeIn();
+  const { ref: decisionsLabelRef, isVisible: decisionsLabelVisible } = useFadeIn();
+  const { ref: featuresRef, isVisible: featuresVisible } = useFadeIn();
+  const { ref: nextRef, isVisible: nextVisible } = useFadeIn();
+  const { ref: navRef, isVisible: navVisible } = useFadeIn();
+
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
-      <CaseHeader
-        tag="Wellness · Mobile · Concept"
-        title="Ember"
-        subtitle="A private burnout journal for people who don't have time to journal — designed to feel like a quiet room, not a clinical form."
-        accent="amber"
-        imageSrc="/ember-card.png"
-        imageAlt="Ember app concept"
-      />
+      <div ref={headerRef} className={`fade-up${headerVisible ? " visible" : ""}`}>
+        <CaseHeader
+          tag="Wellness · Mobile · Concept"
+          title="Ember"
+          subtitle="A private burnout journal for people who don't have time to journal — designed to feel like a quiet room, not a clinical form."
+          accent="amber"
+          imageSrc="/ember-card.png"
+          imageAlt="Ember app concept"
+        />
+      </div>
 
       {/* The Problem */}
-      <section style={sectionStyle}>
+      <section ref={problemRef} className={`fade-up${problemVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>The Problem</p>
         <h2 style={h2Style}>
           Students don&apos;t recognize burnout until they&apos;re already in it.
@@ -96,7 +118,7 @@ export default function Ember() {
       </section>
 
       {/* Target User */}
-      <section style={sectionStyle}>
+      <section ref={userRef} className={`fade-up${userVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Target User</p>
         <h2 style={h2Style}>
           Overwhelmed college students, especially those working jobs on top of
@@ -146,8 +168,10 @@ export default function Ember() {
 
       {/* Design Decisions */}
       <section style={sectionStyle}>
-        <p style={labelStyle}>Why I made these decisions</p>
-        <h2 style={h2Style}>Design approach.</h2>
+        <div ref={decisionsLabelRef} className={`fade-up${decisionsLabelVisible ? " visible" : ""}`}>
+          <p style={labelStyle}>Why I made these decisions</p>
+          <h2 style={h2Style}>Design approach.</h2>
+        </div>
         <div
           style={{
             display: "grid",
@@ -156,19 +180,20 @@ export default function Ember() {
             marginTop: "1.5rem",
           }}
         >
-          {decisions.map((d) => (
-            <DecisionCard
-              key={d.number}
-              number={d.number}
-              title={d.title}
-              description={d.description}
-            />
+          {decisions.map((d, index) => (
+            <FadeItem key={d.number} delay={index < 3 ? `delay-${index + 1}` : undefined}>
+              <DecisionCard
+                number={d.number}
+                title={d.title}
+                description={d.description}
+              />
+            </FadeItem>
           ))}
         </div>
       </section>
 
       {/* Core Features */}
-      <section style={sectionStyle}>
+      <section ref={featuresRef} className={`fade-up${featuresVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Core Features</p>
         <h2 style={h2Style}>What Ember does.</h2>
         <div style={{ maxWidth: "680px" }}>
@@ -194,7 +219,7 @@ export default function Ember() {
       </section>
 
       {/* Next Steps */}
-      <section style={sectionStyle}>
+      <section ref={nextRef} className={`fade-up${nextVisible ? " visible" : ""}`} style={sectionStyle}>
         <p style={labelStyle}>Next Steps</p>
         <h2 style={h2Style}>What I&apos;d do next.</h2>
         <div
@@ -223,6 +248,8 @@ export default function Ember() {
 
       {/* Bottom Nav */}
       <div
+        ref={navRef}
+        className={`fade-up${navVisible ? " visible" : ""}`}
         style={{
           borderTop: "0.5px solid var(--border)",
           padding: "3rem 0",

@@ -1,3 +1,7 @@
+"use client";
+
+import { useFadeIn } from "@/hooks/useFadeIn";
+
 const labelStyle: React.CSSProperties = {
   fontFamily: "'IBM Plex Sans', sans-serif",
   fontSize: "var(--font-label)",
@@ -39,6 +43,15 @@ const designSkills = [
   },
 ];
 
+function FadeItem({ children, delay }: { children: React.ReactNode; delay?: string }) {
+  const { ref, isVisible } = useFadeIn();
+  return (
+    <div ref={ref} className={`fade-up${isVisible ? " visible" : ""}${delay ? ` ${delay}` : ""}`}>
+      {children}
+    </div>
+  );
+}
+
 function SkillList({
   items,
   accentColor,
@@ -48,50 +61,60 @@ function SkillList({
 }) {
   return (
     <div style={{ maxWidth: "560px" }}>
-      {items.map((item) => (
-        <div
-          key={item.name}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "0.75rem 0",
-            borderBottom: "0.5px solid var(--border)",
-            borderLeft: accentColor ? `3px solid ${accentColor}` : undefined,
-            paddingLeft: accentColor ? "0.75rem" : undefined,
-          }}
-        >
-          <span
+      {items.map((item, index) => (
+        <FadeItem key={item.name} delay={`delay-${(index % 3) + 1}`}>
+          <div
             style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "14px",
-              fontWeight: 500,
-              color: "var(--text)",
+              display: "flex",
+              flexDirection: "column",
+              padding: "0.75rem 0",
+              borderBottom: "0.5px solid var(--border)",
+              borderLeft: accentColor ? `3px solid ${accentColor}` : undefined,
+              paddingLeft: accentColor ? "0.75rem" : undefined,
             }}
           >
-            {item.name}
-          </span>
-          <span
-            style={{
-              fontFamily: "'IBM Plex Sans', sans-serif",
-              fontSize: "var(--font-small)",
-              color: "var(--muted)",
-              marginTop: "0.2rem",
-            }}
-          >
-            {item.description}
-          </span>
-        </div>
+            <span
+              style={{
+                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontSize: "14px",
+                fontWeight: 500,
+                color: "var(--text)",
+              }}
+            >
+              {item.name}
+            </span>
+            <span
+              style={{
+                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontSize: "var(--font-small)",
+                color: "var(--muted)",
+                marginTop: "0.2rem",
+              }}
+            >
+              {item.description}
+            </span>
+          </div>
+        </FadeItem>
       ))}
     </div>
   );
 }
 
 export default function Skills() {
+  const { ref: heroRef, isVisible: heroVisible } = useFadeIn();
+  const { ref: toolsRef, isVisible: toolsVisible } = useFadeIn();
+  const { ref: skillsRef, isVisible: skillsVisible } = useFadeIn();
+  const { ref: aiRef, isVisible: aiVisible } = useFadeIn();
+
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
 
       {/* Hero */}
-      <section style={{ padding: "6rem 0 4rem" }}>
+      <section
+        ref={heroRef}
+        className={`fade-up${heroVisible ? " visible" : ""}`}
+        style={{ padding: "6rem 0 4rem" }}
+      >
         <p style={labelStyle}>Skills</p>
         <h1
           style={{
@@ -118,11 +141,11 @@ export default function Skills() {
             gap: "3rem",
           }}
         >
-          <div>
+          <div ref={toolsRef} className={`fade-up${toolsVisible ? " visible" : ""}`}>
             <p style={labelStyle}>Design tools</p>
             <SkillList items={designTools} accentColor="var(--blue)" />
           </div>
-          <div>
+          <div ref={skillsRef} className={`fade-up${skillsVisible ? " visible" : ""}`}>
             <p style={labelStyle}>Design skills</p>
             <SkillList items={designSkills} accentColor="var(--amber)" />
           </div>
@@ -131,6 +154,8 @@ export default function Skills() {
 
       {/* AI Workflow */}
       <section
+        ref={aiRef}
+        className={`fade-up${aiVisible ? " visible" : ""}`}
         style={{
           ...sectionStyle,
           background: "var(--blue-light)",
