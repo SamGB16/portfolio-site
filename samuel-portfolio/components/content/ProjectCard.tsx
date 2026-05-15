@@ -36,11 +36,11 @@ export default function ProjectCard({
       style={{
         display: "block",
         background: "var(--white)",
-        border: "0.5px solid var(--border)",
+        border: `0.5px solid ${hovered ? accentColor : "var(--border)"}`,
         borderRadius: "12px",
         overflow: "hidden",
         transform: hovered ? "translateY(-3px)" : "translateY(0)",
-        transition: "transform 0.25s",
+        transition: "transform 0.25s, border-color 0.25s",
       }}
     >
       {image && (
@@ -97,9 +97,10 @@ export default function ProjectCard({
             fontFamily: "'IBM Plex Sans', sans-serif",
             fontSize: "var(--font-label)",
             textTransform: "uppercase",
-            letterSpacing: "0.08em",
+            letterSpacing: hovered ? "0.10em" : "0.08em",
             fontWeight: 500,
             color: accentColor,
+            transition: "letter-spacing 0.25s",
           }}
         >
           View case study →
