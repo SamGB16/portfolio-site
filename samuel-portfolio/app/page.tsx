@@ -38,27 +38,35 @@ export default function Home() {
   return (
     <div style={{ maxWidth: "var(--max-width)", margin: "0 auto", padding: "0 2rem" }}>
       <section style={{ padding: "6rem 0 5rem" }}>
-        <style>{`
-          @media (max-width: 700px) {
-            .hero-layout { flex-direction: column-reverse; }
-            .hero-img-wrap { width: 140px !important; margin: 0 auto; }
-          }
-        `}</style>
         <div
-          className="hero-layout"
           style={{
             background: "var(--hero-bg)",
             border: "1px solid var(--border)",
             borderTop: "3px solid var(--blue)",
             borderRadius: "12px",
             padding: "3rem 3.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "3rem",
           }}
         >
-          {/* Left column */}
-          <div style={{ flex: 1 }}>
+          {/* Identity row — avatar + identity line */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              marginBottom: "2rem",
+            }}
+          >
+            <Image
+              src="/portfolio-site/lego-me.png"
+              alt="Samuel Blanco"
+              width={44}
+              height={44}
+              style={{
+                borderRadius: "50%",
+                objectFit: "cover",
+                flexShrink: 0,
+              }}
+            />
             <p
               style={{
                 fontFamily: "'IBM Plex Sans', sans-serif",
@@ -66,74 +74,62 @@ export default function Home() {
                 textTransform: "uppercase",
                 letterSpacing: "0.10em",
                 color: "var(--muted)",
-                marginBottom: "2rem",
               }}
             >
               West New York, NJ · NJIT · Seeking product design internships
             </p>
-
-            <h1
-              style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: "clamp(2rem, 4vw, 3.25rem)",
-                fontWeight: 500,
-                lineHeight: 1.1,
-                letterSpacing: "-0.02em",
-                color: "var(--text)",
-                maxWidth: "820px",
-                marginBottom: "2rem",
-              }}
-            >
-              I design tools for people who are juggling too much — making the
-              stressful parts of life a little clearer and a little easier.
-            </h1>
-
-            <p
-              style={{
-                fontFamily: "'IBM Plex Sans', sans-serif",
-                fontSize: "var(--font-body)",
-                fontWeight: 400,
-                color: "var(--muted)",
-                maxWidth: "560px",
-                lineHeight: 1.8,
-                marginBottom: "2.5rem",
-              }}
-            >
-              I&apos;m a design student at NJIT who is drawn to the space where real
-              life gets complicated — irregular paychecks, burnout you don&apos;t
-              notice until it&apos;s too late, and apps that weren&apos;t built for
-              people like us. My best work starts with a problem I&apos;ve actually
-              lived, then works toward something calm, usable, and honest.
-            </p>
-
-            <div style={{ display: "flex", gap: "1.5rem" }}>
-              <Link
-                href="/#work"
-                style={{
-                  fontFamily: "'IBM Plex Sans', sans-serif",
-                  fontSize: "var(--font-nav)",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.08em",
-                  fontWeight: 500,
-                  color: "var(--blue)",
-                  borderBottom: "1.5px solid var(--blue)",
-                }}
-              >
-                View projects ↓
-              </Link>
-              <SecondaryLink href="/about">About me →</SecondaryLink>
-            </div>
           </div>
 
-          {/* Right column — image */}
-          <div className="hero-img-wrap" style={{ width: "200px", flexShrink: 0 }}>
-            <Image
-              src="/portfolio-site/lego-me.png"
-              alt="Samuel Blanco"
-              width={200}
-              height={200}
-              style={{ objectFit: "contain", width: "100%", height: "200px" }}
-            />
+          <h1
+            style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "clamp(2rem, 4vw, 3.25rem)",
+              fontWeight: 500,
+              lineHeight: 1.1,
+              letterSpacing: "-0.02em",
+              color: "var(--text)",
+              maxWidth: "820px",
+              marginBottom: "2rem",
+            }}
+          >
+            I design tools for people who are juggling too much — making the
+            stressful parts of life a little clearer and a little easier.
+          </h1>
+
+          <p
+            style={{
+              fontFamily: "'IBM Plex Sans', sans-serif",
+              fontSize: "var(--font-body)",
+              fontWeight: 400,
+              color: "var(--muted)",
+              maxWidth: "560px",
+              lineHeight: 1.8,
+              marginBottom: "2.5rem",
+            }}
+          >
+            I&apos;m a design student at NJIT who is drawn to the space where real
+            life gets complicated — irregular paychecks, burnout you don&apos;t
+            notice until it&apos;s too late, and apps that weren&apos;t built for
+            people like us. My best work starts with a problem I&apos;ve actually
+            lived, then works toward something calm, usable, and honest.
+          </p>
+
+          <div style={{ display: "flex", gap: "1.5rem" }}>
+            <Link
+              href="/#work"
+              style={{
+                fontFamily: "'IBM Plex Sans', sans-serif",
+                fontSize: "var(--font-nav)",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                fontWeight: 500,
+                color: "var(--blue)",
+                borderBottom: "1.5px solid var(--blue)",
+              }}
+            >
+              View projects ↓
+            </Link>
+            <SecondaryLink href="/about">About me →</SecondaryLink>
           </div>
         </div>
       </section>
