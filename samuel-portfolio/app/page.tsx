@@ -218,7 +218,7 @@ export default function Home() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "1fr 1fr 1fr",
             gap: "1.5rem",
           }}
         >
@@ -235,6 +235,15 @@ export default function Home() {
             description="A private burnout journal for people who don't have time to journal — designed to feel like a quiet room, not a clinical form."
             href="/ember"
             accent="amber"
+          />
+          <ProjectCard
+            tag="Scrollytelling · Web"
+            title="Music Consumption Museum"
+            description="Five eras of music technology — from vinyl to streaming — told through a scrollytelling experience built with Next.js."
+            href="https://samgb16.github.io/Scrolly-Telling-/"
+            accent="purple"
+            target="_blank"
+            rel="noopener noreferrer"
           />
         </div>
       </section>

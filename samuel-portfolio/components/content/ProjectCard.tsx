@@ -9,12 +9,15 @@ interface ProjectCardProps {
   tag: string;
   description: string;
   href: string;
-  accent: "blue" | "amber";
+  accent: "blue" | "amber" | "purple";
+  target?: string;
+  rel?: string;
 }
 
 const imageMap: Record<string, { src: string; alt: string }> = {
   "/tiptrack": { src: "/portfolio-site/tiptrack-card.png", alt: "TipTrack app concept" },
   "/ember":    { src: "/portfolio-site/ember-card.png",    alt: "Ember app concept" },
+  "https://samgb16.github.io/Scrolly-Telling-/": { src: "/portfolio-site/museum-card.png", alt: "Music Consumption Museum" },
 };
 
 export default function ProjectCard({
@@ -23,14 +26,18 @@ export default function ProjectCard({
   description,
   href,
   accent,
+  target,
+  rel,
 }: ProjectCardProps) {
   const [hovered, setHovered] = useState(false);
-  const accentColor = accent === "blue" ? "var(--blue)" : "var(--amber)";
+  const accentColor = accent === "blue" ? "var(--blue)" : accent === "amber" ? "var(--amber)" : "#534AB7";
   const image = imageMap[href];
 
   return (
     <Link
       href={href}
+      target={target}
+      rel={rel}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
